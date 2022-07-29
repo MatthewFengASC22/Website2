@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    <title>Ugly HTML</title>
-    <link rel="stylesheet" href="style.css">
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 <body>
-    <div class="introduction">
-        <h1>Pokemon!</h1>
-        <h2>Let's learn about our gen 1 starters</h2>
-        <div id="starters_image_div">
-            <img src="images/starters.jpg">
-        </div>
-    </div>
 
-    <div class="list">
-        <p>Gen 1 starters:</p>
-        <ul>
-            <li>Bulbasaur</li>
-            <li>Charmander</li>
-            <li>Squirtle</li>
-        </ul>
-    </div>
+<h2>CSS Template using Flexbox</h2>
+<p>In this example, we have created a header, three equal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
+<p>Resize the browser window to see the responsive effect.</p>
+<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 eand earlier versions.</p>
 
-    <div class="all_pokemon_container">
-        <div class="each_pokemon_container">
-            <img class="pokemon_images" src="images/bulbasaur.png">
-        </div>
-        <div id="bulbasaur_container">
-            <h3 class="pokemon_names">Bulbasaur</h3>
-            <p class="pokemon_description">
-                Bulbasaur. It bears the seed of a plant on its back from birth. The seed slowly develops. Researchers are unsure whether to classify Bulbasaur as a plant or animal. Bulbasaur are extremely calm and very difficult to capture in the wild.
-            </p>
-        </div>
+<div class="header">
+  <h2>Header</h2>
+</div>
 
-        <div class="each_pokemon_container">
-            <img class="pokemon_images" src="images/charmander.png">
-        </div>
-        <div id="charmander_container">
-            <h3 class="pokemon_names">Charmander</h3>
-            <p class="pokemon_description">
-                Charmander. A flame burns on the tip of its tail from birth. It is said that a Charmander dies if its flame ever goes out.
-            </p>
-        </div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">Column</div>
+  <div class="column" style="background-color:#bbb;">Column</div>
+  <div class="column" style="background-color:#ccc;">Column</div>
+</div>
 
-        <div class="each_pokemon_container">
-            <img class="pokemon_images" src="images/squirtle.png">
-        </div>
-        <div id="squirtle_container">
-            <h3 class="pokemon_names">Squirtle</h3>
-            <p class="pokemon_description">
-                Squirtle. This Tiny Turtle Pokémon draws its long neck into its shell to launch incredible water attacks with amazing range and accuracy. The blasts can be quite powerful.
-            </p>
-        </div>
-    </div>
+<div class="footer">
+  <p>Footer</p>
+</div>
 
-    <footer>
-        &Aopf; &Lopf; &Lopf; &nbsp; &Sopf; &Topf; &Aopf; &Ropf; &nbsp; &Copf; &Oopf; &Dopf; &Eopf; &nbsp; | &nbsp; &Uopf; &Gopf; &Lopf; &Yopf; &nbsp; &Hopf; &Topf; &Mopf; &Lopf; &nbsp; &Popf; &Ropf; &Oopf; &Jopf; &Eopf; &Copf; &Topf;
-    </footer>
 </body>
 </html>
+
+
